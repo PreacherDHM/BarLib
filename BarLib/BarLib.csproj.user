@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Bars\EfficiencyBarHorizontal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Bars\EfficiencyBarVertical.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Bars\EventBarHorizontal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Bars\EfficiencyBarHorizontal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Bars\EfficiencyBarVertical.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Bars\EventBarHorizontal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
