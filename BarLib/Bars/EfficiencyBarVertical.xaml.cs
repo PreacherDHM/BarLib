@@ -30,26 +30,26 @@ namespace BarLib.Bars
 			}
 		}
 
-		private double m_TargetLineHeight;
+		private double m_TargetLineHeight = 20;
 		public double TargetLineHeight
 		{
 			get { return m_targetLinePos; }
 			set { m_targetLinePos = value; NotifyPropertyChanged("TargetLineHeight"); SetTargetLineHeight(); }
 		}
 
-		public string GetWidth
-		{
-			set { }
-			get { return "0," + X1 + ",0," + X2; }
-		}
-
 		private double m_x1;
+		/// <summary>
+		///  X1 Is The X Position of the Target Line.
+		/// </summary>
 		public double X1
 		{
 			get { return m_x1; }
 			set { m_x1 = value; NotifyPropertyChanged("Y1"); }
 		}
 		private double m_x2;
+		/// <summary>
+		///  X2 is the second X Position of the Target Line.
+		/// </summary>
 		public double X2
 		{
 			get { return m_x2; }
@@ -57,6 +57,9 @@ namespace BarLib.Bars
 		}
 
 		private double m_targetLinePos;
+		/// <summary>
+		/// TargetLinePos is the current position of the target line.
+		/// </summary>
 		public double TargetLinePos
 		{
 			get { return m_targetLinePos; }
@@ -67,7 +70,11 @@ namespace BarLib.Bars
 			}
 		}
 
-		private double m_maxValue;
+		private double m_maxValue = 100;
+		/// <summary>
+		/// MaxValue is the Max Value of the bar graph.
+		/// This could be anywhar between 100 to 58000.
+		/// </summary>
 		public double MaxValue
 		{
 			get { return m_maxValue; }
@@ -79,7 +86,10 @@ namespace BarLib.Bars
 			}
 		}
 
-		private double m_value;
+		private double m_value = 50;
+		/// <summary>
+		/// Value is the current value that will be displayed on the graph.
+		/// </summary>
 		public double Value
 		{
 			get { return m_value; }
@@ -91,24 +101,33 @@ namespace BarLib.Bars
 			}
 		}
 
-		private double m_barHeight;
+		private double m_barHeight = 25;
+		/// <summary>
+		/// This is the Height of the bar graph.
+		/// </summary>
 		public double BarHeight
 		{
 			get { return m_barHeight; }
 			set { m_barHeight = value; NotifyPropertyChanged("BarHeight");}
 		}
 
-		private double m_barWidth;
+		private double m_barWidth = 25;
+		/// <summary>
+		/// This is the Width of the bar of the bar graph.
+		/// </summary>
 		public double BarWidth
 		{
 			get { return m_barWidth; } 
-			private set
+			set
 			{
 				m_barWidth = value; NotifyPropertyChanged("BarWidth");
 			}
 		}
 
-		private Brush m_color;
+		private Brush m_color = Brushes.Lime;
+		/// <summary>
+		/// Color is the color of the bar in the bar graph
+		/// </summary>
 		public Brush Color
 		{
 			get { return m_color; }
@@ -145,7 +164,7 @@ namespace BarLib.Bars
 				}
 
 				var percent = (barValue * 100) / m_maxValue;
-				BarWidth = (percent * this.ActualHeight) / 100;
+				BarHeight = (percent * this.ActualHeight) / 100;
 
 				var linePercent = (lineValue * 100) / m_maxValue;
 				TargetLinePos = ((linePercent * this.ActualHeight) / 100);
@@ -167,6 +186,7 @@ namespace BarLib.Bars
 		private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
 		{
 			UpdateBarWidth();
+			SetTargetLineHeight();
 		}
 	
 	}

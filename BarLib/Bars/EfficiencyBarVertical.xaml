@@ -9,9 +9,9 @@
              Loaded="UserControl_Loaded">
 	<Grid SizeChanged="Grid_SizeChanged" Name="base">
 		<Grid Background="#00000000" Opacity="0.3"/>
-		<Border x:Name="border" Background="{Binding Color}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="{Binding BarHeight}" Height="{Binding BarWidth}"/>
-		<Line Y1="{Binding TargetLinePos}" X1="0"
-			  Y2="{Binding TargetLinePos}" X2="50"
+		<Border x:Name="border" Background="{Binding Color}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="{Binding BarWidth}" Height="{Binding BarHeight}"/>
+		<Line Y1="{Binding TargetLinePos}" X1="{Binding X1}"
+			  Y2="{Binding TargetLinePos}" X2="{Binding X2}"
 			  Stroke="Red" StrokeThickness="3"/>
 		<TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="{Binding Value}" FontSize="15" Foreground="{Binding Forground}">
 		</TextBlock>

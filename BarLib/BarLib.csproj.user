@@ -11,6 +11,9 @@
     <Compile Update="Bars\EventBarHorizontal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Graphs\LineChart.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Bars\EfficiencyBarHorizontal.xaml">
@@ -20,6 +23,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Bars\EventBarHorizontal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Graphs\LineChart.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

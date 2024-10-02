@@ -8,13 +8,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
             
-            <bar:EfficiencyBarHorizontal Margin="10" Height="30"/>
-            <bar:EfficiencyBarHorizontal Margin="10" Height="30"/>
-            <bar:EfficiencyBarHorizontal Margin="10" Height="30"/>
-            <bar:EfficiencyBarHorizontal Margin="10" Height="30"/>
-            <bar:EfficiencyBarHorizontal Margin="10" Height="30"/>
+            <bar:EfficiencyBarVertical Value="120" BarWidth="20" Color="Lime" MaxValue="100" Margin="10" Width="100"/>
         </StackPanel>
     </Grid>
 </Window>
