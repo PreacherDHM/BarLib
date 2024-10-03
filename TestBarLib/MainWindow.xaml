@@ -6,11 +6,12 @@
         xmlns:local="clr-namespace:TestBarLib"
         xmlns:bar="clr-namespace:BarLib.Bars;assembly=BarLib"
         mc:Ignorable="d"
+        Background="#333335"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             
-            <bar:EfficiencyBarVertical Value="120" BarWidth="20" Color="Lime" MaxValue="100" Margin="10" Width="100"/>
+            <bar:EventBarHorizontal Height="30" Margin="10" Width="100"/>
         </StackPanel>
     </Grid>
 </Window>
