@@ -16,23 +16,17 @@ using System.Windows.Shapes;
 namespace BarLib.Graphs
 {
 	/// <summary>
-	/// Interaction logic for LineChart.xaml
+	///  Point is a object that contains a value and a X and Y position 
+	///  so that it may be ploted on a graph.
 	/// </summary>
-	public partial class LineChart : UserControl
+	public class Point : Control
 	{
-		public List<Point> Points { get; set; } = new List<Point>();
-		public Point Point { set { Points.Add(value); } }
-
-		public LineChart()
+		public string Value { get; set; }
+		public double XPosition { get; set; }
+		public double YPosition { get; set; }
+		static Point()
 		{
-			InitializeComponent();
-		}
-
-		private void UserControl_Loaded(object sender, RoutedEventArgs e)
-		{
-
-			int sizeOfPoints = Points.Count;
-			MessageBox.Show(Points[sizeOfPoints - 1].Value);
+			DefaultStyleKeyProperty.OverrideMetadata(typeof(Point), new FrameworkPropertyMetadata(typeof(Point)));
 		}
 	}
 }
