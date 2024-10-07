@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Event Graph.md",
+                "file": "Docs/Vertical Bar Graph.md",
                 "mode": "source",
                 "source": false
               }
@@ -29,8 +29,12 @@
             "id": "c9f7e1afa2f61555",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Chart Graph.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -99,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Event Graph.md",
+                "file": "Docs/Vertical Bar Graph.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Event Graph.md",
+                "file": "Docs/Vertical Bar Graph.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Event Graph.md"
+                "file": "Docs/Vertical Bar Graph.md"
               }
             }
           }
@@ -162,11 +166,14 @@
   },
   "active": "4a2d4d91e7c926e1",
   "lastOpenFiles": [
-    "Pasted image 20241003102807.png",
+    "Chart Graph.md",
     "Docs/List Of Contents.md",
-    "Event Graph.md",
-    "Docs/Vertical Bar Graph.md",
+    "Docs/Horizontal Event Graph.md",
+    "Docs/Horizontal Bar Graph.md",
+    "Docs/Event Graph.md",
     "Docs/Efficiency Graph.md",
+    "Docs/Vertical Bar Graph.md",
+    "Docs/Pasted image 20241003102807.png",
     "Welcome.md",
     "Featurs",
     "Docs"

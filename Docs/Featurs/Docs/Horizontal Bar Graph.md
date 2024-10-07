@@ -1,0 +1,1 @@
+This is the [[Efficiency Graph]] but horizontal.

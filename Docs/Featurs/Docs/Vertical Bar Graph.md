@@ -1,1 +1,1 @@
-The Vertical Bar Graph is the Efficiency Bar But vertical.
+The Vertical Bar Graph is the [[Efficiency Graph]] But vertical.
