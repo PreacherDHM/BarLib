@@ -68,7 +68,19 @@ namespace BarLib.Bars
 			}
 		}
 
-		private double m_maxValue = 100;
+		private double m_targetValue = 100;
+		public double TargetValue
+		{
+			get { return m_targetValue; }
+			set
+			{
+				m_targetValue = value;
+				UpdateBarWidth();
+				NotifyPropertyChanged("TargetValue");
+			}
+		}
+
+		private double m_maxValue = 120;
 		public double MaxValue
 		{
 			get { return m_maxValue; }
@@ -119,8 +131,10 @@ namespace BarLib.Bars
 		public EfficiencyBarHorizontal()
 		{
 			InitializeComponent();
-			this.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+			Grid_Base.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+			ValueText.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
 			this.DataContext = this;
+			
 		}
 
 
@@ -132,7 +146,7 @@ namespace BarLib.Bars
 				if(m_value > m_maxValue)
 				{
 					barValue = m_maxValue;
-					lineValue = m_maxValue - m_value;
+					lineValue = (m_maxValue - m_value) - (m_maxValue - m_targetValue);
 					lineValue += m_maxValue;
 					if(lineValue < 0 )
 					{
@@ -141,14 +155,17 @@ namespace BarLib.Bars
 				}else
 				{
 					barValue = m_value;
-					lineValue = m_maxValue;
+					lineValue = m_targetValue;
 				}
 
-				var percent = (barValue * 100) / m_maxValue;
-				BarWidth = (percent * this.ActualWidth) / 100;
+				var target = m_maxValue / m_targetValue;
+				var percent = (barValue * 100) / m_targetValue;
+				percent = percent / target;
+				BarWidth = (percent * (Grid_Base.ActualWidth - ValueText.ActualWidth - (ValueText.Margin.Left))) / 100;
 
+				
 				var linePercent = (lineValue * 100) / m_maxValue;
-				TargetLinePos = ((linePercent * this.ActualWidth) / 100) - 1;
+				TargetLinePos = ((linePercent * (Grid_Base.ActualWidth - ValueText.ActualWidth - (ValueText.Margin.Left))) / 100) - 1;
 
 				
 			}
@@ -156,7 +173,7 @@ namespace BarLib.Bars
 
 		private void SetTargetLineHeight() {
 			Y1 = 0;
-			Y2 = this.ActualHeight;
+			Y2 = Grid_Base.ActualHeight;
 		}
 
 		private void UserControl_Loaded(object sender, RoutedEventArgs e) {
@@ -165,6 +182,7 @@ namespace BarLib.Bars
 		}
 		private void Grid_SizeChanged(object sender, SizeChangedEventArgs e) {
 			UpdateBarWidth();
+			SetTargetLineHeight();
 		}
 	}
 }
