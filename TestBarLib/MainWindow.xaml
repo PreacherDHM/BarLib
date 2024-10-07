@@ -5,15 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestBarLib"
         xmlns:bar="clr-namespace:BarLib.Bars;assembly=BarLib"
+        xmlns:graph="clr-namespace:BarLib.Graphs;assembly=BarLib"
         mc:Ignorable="d"
         Background="#333335"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 
-            <bar:EfficiencyGroup>
-                <TextBlock>testing</TextBlock>
-            </bar:EfficiencyGroup>
+            <bar:EfficiencyBarHorizontal Height="30" Margin="10" Width="100"/>
+            <graph:LineChart>
+                <graph:LineChart.Points>
+                    <graph:Point Value="5"/>
+                    <graph:Point Value="50"/>
+                    <graph:Point Value="500"/>
+                    <graph:Point Value="5000"/>
+                    <graph:Point Value="50000"/>
+                </graph:LineChart.Points>
+            </graph:LineChart>
         </StackPanel>
     </Grid>
 </Window>
