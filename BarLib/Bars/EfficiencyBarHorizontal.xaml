@@ -9,10 +9,26 @@
              Loaded="UserControl_Loaded">
         <Grid SizeChanged="Grid_SizeChanged" >
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="auto"/>
+
         </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" Name="Grid_Base" Margin="5">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Margin="5" Content="{Binding Label}" FontSize="{Binding LabelSize}" Foreground="{Binding Foreground}" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label.LayoutTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="{Binding LabelAngle}"/>
+                    </TransformGroup>
+                </Label.LayoutTransform>
+            </Label>
+            <Border Grid.Column="1" Width="2" Background="{Binding Foreground}" Margin="0,5"/>
+        </Grid>
+            <Grid Grid.Column="1" Name="Grid_Base" Margin="5">
                 <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition MinWidth="{Binding TargetLinePos}" Width="{Binding BarWidth}"/>

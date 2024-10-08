@@ -22,12 +22,60 @@ namespace BarLib.Bars
 	/// </summary>
 	public partial class EfficiencyBarHorizontal : UserControl, INotifyPropertyChanged
 	{
+		public enum LabelOrientationEnum
+		{
+			Vertical,
+			Horizontal
+		}
 
 		public event PropertyChangedEventHandler? PropertyChanged;
 		private void NotifyPropertyChanged(string info) { 
 			if(PropertyChanged != null)
 			{
 				PropertyChanged(this, new PropertyChangedEventArgs(info));
+			}
+		}
+
+		private double m_labelAngle = 0;
+		public double LabelAngle
+		{
+			get { return m_labelAngle; } set
+			{
+				m_labelAngle = value;
+				NotifyPropertyChanged("LabelAngle");
+			}
+		}
+
+		private double m_labelSize = 0;
+		public double LabelSize
+		{
+			get { return m_labelSize; } set
+			{
+				m_labelSize = value;
+				NotifyPropertyChanged("LabelSize");
+			}
+		}
+
+		private LabelOrientationEnum m_orientation;
+		public LabelOrientationEnum LabelOrientation
+		{
+			get { return m_orientation; }
+			set 
+			{ 
+				m_orientation = value;
+				NotifyPropertyChanged("LabelOrientation");
+				UpdateLabel();
+			}
+		}
+
+		private string m_label;
+		public string Label
+		{
+			get { return m_label; }
+			set
+			{
+				m_label = value;
+				NotifyPropertyChanged("Label");
 			}
 		}
 
@@ -137,6 +185,16 @@ namespace BarLib.Bars
 			
 		}
 
+		void UpdateLabel()
+		{
+			if (LabelOrientation == LabelOrientationEnum.Vertical)
+			{
+				LabelAngle = -90;
+			}else
+			{
+				LabelAngle = 0;
+			}
+		}
 
 		void UpdateBarWidth() {
 			double barValue;
